@@ -1,0 +1,17 @@
+{
+  "name": "onions-timer-example",
+  "version": "1.0.0",
+  "description": "onions-timer-example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "bluebird": "^3.5.3",
+    "moment": "^2.22.2"
+  }
+}

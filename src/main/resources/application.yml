@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: onions-timer-plus
+logging:
+  level:
+    root: info
+    sun:
+      rmi: error
+  path: logs/
+  file: onions-timer-plus.log

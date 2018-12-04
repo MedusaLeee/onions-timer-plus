@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/quartz
+    username: jianxun
+    password: rootroot
+    driver-class-name: org.postgresql.Driver
+    druid:
+      max-active: 500
+      initial-size: 50
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    publisher-confirms: true
+    publisher-returns: true
+    listener:
+      direct:
+        acknowledge-mode: manual
+        prefetch: 30
+        retry:
+          enabled: true
+      simple:
+        acknowledge-mode: manual
+        concurrency: 1
+        max-concurrency: 5
+        prefetch: 30
+        retry:
+          enabled: true
+    template:
+      retry:
+        enabled: true
+
+self:
+  quartz:
+    properties-name: quartz-prod.properties

@@ -13,7 +13,7 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:application.yml")
 public class QuartzConfig {
 
     @Autowired
@@ -24,7 +24,6 @@ public class QuartzConfig {
 
     @Bean
     public SchedulerFactoryBean schedulerFactoryBean(QuartzJobFactory quartzJobFactory) throws Exception {
-        System.out.println("quartzJobFactory = [" + quartzPropertiesName + "]");
         SchedulerFactoryBean factoryBean = new SchedulerFactoryBean();
         factoryBean.setJobFactory(quartzJobFactory);
         factoryBean.setConfigLocation(new ClassPathResource(quartzPropertiesName));
@@ -37,7 +36,6 @@ public class QuartzConfig {
     public Scheduler scheduler(SchedulerFactoryBean schedulerFactoryBean) throws Exception {
         Scheduler scheduler = schedulerFactoryBean.getScheduler();
         scheduler.start();
-        System.out.println("schedulerFactoryBean = [ start ....]");
         return scheduler;
     }
 
