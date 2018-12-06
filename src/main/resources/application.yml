@@ -3,10 +3,10 @@ spring:
     active: dev
   application:
     name: onions-timer-plus
+  jmx:
+    enabled: false
 logging:
   level:
     root: info
-    sun:
-      rmi: error
   path: logs/
   file: onions-timer-plus.log
